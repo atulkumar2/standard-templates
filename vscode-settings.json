@@ -1,0 +1,109 @@
+{
+  // -------------------------
+  // Python / Ruff integration
+  // -------------------------
+
+  "python.languageServer": "Pylance",
+
+  // Use the project venv by default (adjust for Windows if needed)
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      // Let Ruff / tools handle full fixes; only run on explicit save
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  },
+
+  "ruff.lint.enable": true,
+  "ruff.format.enable": true,
+  "ruff.nativeServer": "on",
+  "ruff.lineLength": 100,
+
+  // -------------------------
+  // Notebooks
+  // -------------------------
+
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+
+  // -------------------------
+  // Web / JSON / Markdown formatting (Prettier)
+  // -------------------------
+
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+
+  // If you install markdownlint
+  "markdownlint.config": {
+    "default": true,
+    "MD013": false,
+    "MD033": false,
+    "MD041": false
+  },
+  "markdownlint.run": "onSave",
+
+  "markdown.preview.breaks": true,
+  "markdown.preview.doubleClickToSwitchToEditor": true,
+  "markdown.preview.scrollPreviewWithEditor": true,
+  "markdown.preview.scrollEditorWithPreview": true,
+
+  // -------------------------
+  // Generic editor behavior
+  // -------------------------
+
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    // Keep global behavior minimal; language blocks override details
+    "source.organizeImports": "explicit"
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true
+}
