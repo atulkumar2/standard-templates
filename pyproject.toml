@@ -112,3 +112,41 @@ python_files = [
     "test_*.py",
     "*_test.py"
 ]
+
+[tool.pyright]
+# --- Python version & scope ---
+pythonVersion = "3.13"
+typeCheckingMode = "basic"
+diagnosticMode = "workspace"
+
+# --- Paths ---
+include = [
+    "investor_agent",
+    "cli.py", "cli_helpers.py", "spinner.py", "constants.py", "setup_data.py"]
+exclude = [
+    "**/__pycache__",
+    "build",
+    "dist",
+    ".venv",
+    ".ruff_cache",
+    ".pytest_cache"
+]
+
+# --- Typing behavior ---
+useLibraryCodeForTypes = true
+reportMissingTypeStubs = false
+reportUnknownMemberType = false
+reportUnknownVariableType = false
+reportUnknownArgumentType = false
+
+# --- Practical strictness (agent-friendly) ---
+reportImplicitAny = false
+reportImplicitOverride = true
+reportUninitializedInstanceVariable = true
+reportUnusedImport = false   # Ruff handles this
+reportUnusedVariable = false # Ruff handles this
+reportPrivateImportUsage = false
+
+# --- Modern Python assumptions ---
+enableExperimentalFeatures = true
+reportOptionalMemberAccess = false
